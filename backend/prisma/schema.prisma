@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Part of the challenge: add the Ingredient model here.
+// Per docs/db.md in zest-support, `ingredients` is just:
+//   id   uuid (PK)
+//   name varchar
+//
+// Then run: npx prisma migrate dev --name init_ingredient

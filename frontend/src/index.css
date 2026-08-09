@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens mirrored from the real design system
+ * (design/uploads/zest-wireframe-design/app/globals.css in zest-support).
+ * Use these via Tailwind theme values (bg-primary, text-foreground, font-heading, ...)
+ * instead of hardcoding hex values in components.
+ */
+@theme {
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+
+  --color-primary: #e8415a;
+  --color-primary-foreground: #ffffff;
+  --color-coral: #f2735a;
+  --color-accent: #f5c842;
+  --color-lime: #7dc242;
+
+  --color-background: #faf7f2;
+  --color-foreground: #2c2c2c;
+  --color-card: #ffffff;
+  --color-secondary: #f5efe5;
+  --color-muted: #f1ebe0;
+  --color-muted-foreground: #7a756c;
+  --color-border: #e7e0d3;
+
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.05rem;
+  --radius-2xl: 1.35rem;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
