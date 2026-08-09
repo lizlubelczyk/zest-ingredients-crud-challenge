@@ -2,7 +2,13 @@
 
 A small onboarding exercise to get hands-on with the real Zest stack (React + TypeScript + Vite + Tailwind, NestJS + TypeScript + Prisma, PostgreSQL) before working on the real app.
 
-**Start here: [`CHALLENGE.md`](./CHALLENGE.md).**
+## Before you start: fork this repo
+
+Don't clone this repo directly — you won't have push access to it. Instead:
+
+1. Click **Fork** in the top right of this page (or `gh repo fork lizlubelczyk/zest-ingredients-crud-challenge --clone`) to create your own copy under your GitHub account.
+2. Clone **your fork**, not this repo, and work from there. Commit and push to your fork as you go — that's how you'll turn in the challenge.
+3. Then follow [`CHALLENGE.md`](./CHALLENGE.md).
 
 This repo is a runnable-but-empty scaffold — Postgres via Docker Compose, a NestJS app with Prisma already wired up, a Vite/React app with Tailwind and the design system's tokens already configured. Nothing about the actual `ingredients` feature is built yet; that's the challenge.
 

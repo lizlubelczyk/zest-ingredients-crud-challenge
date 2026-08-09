@@ -34,6 +34,8 @@ You're implementing `ingredients`, the simplest entity in the real schema (see [
 
 ## Getting started
 
+Fork this repo first (see [`README.md`](./README.md#before-you-start-fork-this-repo)) and clone your fork — you won't have push access to work directly against this one.
+
 ```bash
 docker compose up -d          # starts Postgres
 cd backend && npm install
