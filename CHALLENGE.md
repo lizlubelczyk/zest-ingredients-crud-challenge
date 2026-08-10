@@ -12,20 +12,20 @@ You're implementing `ingredients`, the simplest entity in the real schema (see [
 
 ## Working as a pair: peer review
 
-Split the work along the same line as the folders — one dev takes `backend/`, the other takes `frontend/` — and review each other's PR before anything merges. This is the actual point of doing the challenge as a pair, not just a formality.
+You each build the whole feature independently, on your own fork — this isn't a shared repo. Once you've got something working, you cross-review before considering it done.
 
-1. **Backend dev goes first.** Branch off `main` as `feature/ingredients-backend` (naming per [`skills/git-workflow.md`](https://github.com/inesgassiebayle/zest-support/blob/main/skills/git-workflow.md)), build the model/migration/module, push, and open a PR into `main`.
-2. **Frontend dev reviews it** — use the checklist below, leave at least one real comment (even on an approve), then approve. Don't rubber-stamp; if something's unclear or off, request changes and explain why.
-3. Backend dev addresses feedback, then **merges only after approval** — no self-merging, same as the real repo's convention.
-4. **Frontend dev goes next**, now building against the real (merged) API: branch as `feature/ingredients-frontend`, build the UI, push, open a PR.
-5. **Backend dev reviews it** the same way, then it merges after approval.
+1. Each of you works solo on your own fork, on a branch off `main` (e.g. `feature/ingredients`, naming per [`skills/git-workflow.md`](https://github.com/inesgassiebayle/zest-support/blob/main/skills/git-workflow.md)), building the whole thing per "What you're building" above.
+2. When you've got it working, push the branch and open a PR **within your own fork** (your branch → your fork's `main`).
+3. Add your partner as a collaborator on your fork (see [`README.md`](./README.md#before-you-start-fork-this-repo-each-of-you-separately)) and request their review on the PR.
+4. **You review each other's PR** — use the checklist below, leave at least one real comment (even on an approve), then approve. Don't rubber-stamp; if something's unclear or off, request changes and explain why.
+5. Address any feedback, then **merge only after your partner has approved** — into your own fork's `main`, not theirs. No merging before review, even though it's technically your repo.
 
-By the end, each of you will have opened one PR and reviewed one PR — do the review seriously, it's the part of this exercise that doesn't show up in the acceptance criteria checklist but matters just as much for the real project.
+By the end, each of you will have opened one PR (on your own fork) and reviewed one (on your partner's) — do the review seriously, it's the part of this exercise that doesn't show up in the acceptance criteria checklist but matters just as much for the real project.
 
 ### Review checklist (use this when reviewing your partner's PR)
 
 - Does it actually run? Pull the branch and try it, don't review from the diff alone.
-- Does it match the conventions in `skills/backend.md` / `skills/frontend.md` (whichever side you're reviewing) — thin controllers, DTO validation, theme tokens instead of hardcoded colors, etc.?
+- Does it match the conventions in `skills/backend.md` and `skills/frontend.md` — thin controllers, DTO validation, theme tokens instead of hardcoded colors, etc.?
 - Are the edge cases in the acceptance criteria below actually handled (missing `name`, empty list, failed request)?
 - Is the PR small and focused on just this feature, or did it wander?
 - Leave comments on anything you'd do differently, even minor — that's the practice, not just the approval.
@@ -38,7 +38,7 @@ By the end, each of you will have opened one PR and reviewed one PR — do the r
 - [ ] The frontend page lists existing ingredients and lets you add a new one without a page reload; the list updates to show it.
 - [ ] No console errors, no unhandled promise rejections, loading and error states are visible (not just a blank screen) if the API call fails.
 - [ ] Colors/fonts/radius come from the theme tokens already set up in `frontend/src/index.css` — no hardcoded hex colors in your components.
-- [ ] Both PRs were reviewed and approved by your partner before merging — no self-merges.
+- [ ] Your PR was reviewed and approved by your partner before you merged it — not merged straight away just because it's your own fork.
 
 ## Explicitly not required for this exercise
 
