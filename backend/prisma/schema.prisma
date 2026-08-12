@@ -13,3 +13,8 @@ datasource db {
 //   name varchar
 //
 // Then run: npx prisma migrate dev --name init_ingredient
+
+model Ingredient {
+  id   String @id @default(uuid())
+  name String
+}
