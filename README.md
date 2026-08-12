@@ -12,7 +12,7 @@ This challenge is meant to be done by two devs in parallel, each building the fu
 
 This repo is a runnable-but-empty scaffold — Postgres via Docker Compose, a NestJS app with Prisma already wired up, a Vite/React app with Tailwind and the design system's tokens already configured. Nothing about the actual `ingredients` feature is built yet; that's the challenge.
 
-Conventions to follow while you build come from the [zest-support](https://github.com/inesgassiebayle/zest-support) repo: [`AGENTS.md`](https://github.com/inesgassiebayle/zest-support/blob/main/AGENTS.md) and [`skills/`](https://github.com/inesgassiebayle/zest-support/tree/main/skills). If you're using an AI coding agent, point it at those files.
+This repo has its own [`AGENTS.md`](./AGENTS.md), scoped to this challenge — Codex reads it automatically, and [`CLAUDE.md`](./CLAUDE.md) points Claude Code at the same file, so neither of you needs to paste conventions in manually. For anything beyond this challenge's scope, the fuller conventions live in [zest-support](https://github.com/inesgassiebayle/zest-support)'s `AGENTS.md`/`skills/`.
 
 ## Structure
 
@@ -20,4 +20,6 @@ Conventions to follow while you build come from the [zest-support](https://githu
 backend/    # NestJS + Prisma, Postgres via docker-compose
 frontend/   # Vite + React + TypeScript + Tailwind
 docker-compose.yml   # Postgres only
+AGENTS.md   # conventions for this repo — Codex reads this automatically
+CLAUDE.md   # points Claude Code at AGENTS.md
 ```
