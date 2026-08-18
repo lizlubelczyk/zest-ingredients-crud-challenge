@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  ParseUUIDPipe,
+  Post,
+} from '@nestjs/common';
 import { Ingredient } from '@prisma/client';
 import { IngredientsService } from './ingredients.service';
 import { CreateIngredientDto } from './dto/create-ingredient.dto';
@@ -16,5 +26,11 @@ export class IngredientsController {
   @Post()
   create(@Body() dto: CreateIngredientDto): Promise<Ingredient> {
     return this.ingredients.create(dto);
+  }
+
+  @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  remove(@Param('id', new ParseUUIDPipe()) id: string): Promise<void> {
+    return this.ingredients.remove(id);
   }
 }

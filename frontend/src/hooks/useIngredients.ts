@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { Ingredient } from '../types/ingredient';
-import { getIngredients, createIngredient } from '../services/ingredients';
+import {
+  getIngredients,
+  createIngredient,
+  deleteIngredient,
+} from '../services/ingredients';
 
 // Data-fetching + state kept out of the layout component (frontend.md).
 export function useIngredients() {
@@ -32,5 +36,10 @@ export function useIngredients() {
     );
   }, []);
 
-  return { ingredients, loading, error, reload: load, add };
+  const remove = useCallback(async (id: string) => {
+    await deleteIngredient(id);
+    setIngredients((prev) => prev.filter((i) => i.id !== id));
+  }, []);
+
+  return { ingredients, loading, error, reload: load, add, remove };
 }

@@ -1,12 +1,13 @@
 import { useIngredients } from '../hooks/useIngredients';
 import { AddIngredientForm } from '../components/AddIngredientForm';
+import { IngredientItem } from '../components/IngredientItem';
 import { Card } from '../components/ui/Card';
 import { Notice } from '../components/ui/Notice';
 import { Button } from '../components/ui/Button';
 
 // Route-level layout; data/logic come from the hook and child components.
 export function IngredientsPage() {
-  const { ingredients, loading, error, reload, add } = useIngredients();
+  const { ingredients, loading, error, reload, add, remove } = useIngredients();
 
   return (
     <div className="min-h-screen px-4 py-12">
@@ -42,9 +43,11 @@ export function IngredientsPage() {
             ) : (
               <ul className="divide-y divide-border">
                 {ingredients.map((ing) => (
-                  <li key={ing.id} className="py-3 text-foreground">
-                    {ing.name}
-                  </li>
+                  <IngredientItem
+                    key={ing.id}
+                    ingredient={ing}
+                    onDelete={remove}
+                  />
                 ))}
               </ul>
             )}

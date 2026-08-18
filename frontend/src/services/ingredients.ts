@@ -21,3 +21,11 @@ export function createIngredient(name: string): Promise<Ingredient> {
     body: JSON.stringify({ name }),
   }).then((r) => handle<Ingredient>(r));
 }
+
+export async function deleteIngredient(id: string): Promise<void> {
+  // DELETE returns 204 with no body, so there's nothing to parse.
+  const res = await fetch(`${API_URL}/ingredients/${id}`, { method: 'DELETE' });
+  if (!res.ok) {
+    throw new Error(`Request failed (${res.status})`);
+  }
+}
